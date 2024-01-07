@@ -1,0 +1,34 @@
+
+
+function bakeAndSellPies(pieType, pieQuantity, profitMargin) {
+    const recipe = recipes[pieType];
+    let i = 0;
+    while (i < pieQuantity) {
+        combMessage(pieType);
+
+    }
+
+}
+
+function combMessage (pieType) {
+    let combiningMsg = `Combining ingredients for ${pieType}: `
+    combiningMsg += recipe.map(ingredient => ingredient.name).join(', ');
+    console.log(combiningMsg);
+}
+    
+
+
+
+function pieCost (recipe) {
+const costOfPie = recipe.reduce((prev, current) => {
+    return prev + current.cost;
+}, recipe[0].cost);
+console.log(`Cost per pie: ${costOfPie}`);
+return totRevenue(profitMargin);
+}
+
+function totRevenue (profitMargin) {
+    const totalCost = costOfPie * pieQuantity;
+const revenue = totalCost * (profitMargin || 1.2);
+console.log(`Sold ${pieQuantity} pies for $${revenue.toFixed(2)}!`);
+}
